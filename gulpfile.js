@@ -26,7 +26,7 @@ const webpackStream = require('webpack-stream')
 
 exports.default = function () {
   return src(['spec/*_spec.js'])
-    .pipe(webpackStream(require('webpack.config')))
+    .pipe(webpackStream(require('./webpack.config')))
     .pipe(jasmineBrowser.specRunner({ random: false }))
     // Server is at http://localhost:8888
     // In the options tab uncheck "run tests in random order"

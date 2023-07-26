@@ -2,23 +2,18 @@
   "name": "natural",
   "description": "General natural language (tokenizing, stemming (English, Russian, Spanish), part-of-speech tagging, sentiment analysis, classification, inflection, phonetics, tfidf, WordNet, jaro-winkler, Levenshtein distance, Dice's Coefficient) facilities for node.",
   "version": "6.5.0",
-  "homepage": "https://github.com/NaturalNode/natural",
+  "homepage": "https://github.com/tadamai/natural",
   "repository": {
     "type": "git",
-    "url": "git://github.com/NaturalNode/natural.git"
+    "url": "git://github.com/tadamai/natural.git"
   },
   "engines": {
     "node": ">=0.4.10"
   },
   "dependencies": {
-    "afinn-165": "^1.0.2",
-    "afinn-165-financialmarketnews": "^3.0.0",
-    "apparatus": "^0.0.10",
-    "safe-stable-stringify": "^2.2.0",
     "stopwords-iso": "^1.1.0",
     "sylvester": "^0.0.12",
-    "underscore": "^1.9.1",
-    "wordnet-db": "^3.1.11"
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
@@ -42,7 +37,6 @@
   },
   "standard": {
     "ignore": [
-      "/lib/natural/brill_pos_tagger/lib/TF_Parser.js",
       "/lib/natural/tokenizers/parser_sentence_tokenizer.js"
     ],
     "env": {
@@ -51,17 +45,15 @@
   },
   "jscpd": {
     "ignore": [
-      "lib/natural/brill_pos_tagger/lib/TF_Parser.js",
       "lib/natural/tokenizers/parser_sentence_tokenizer.js"
     ]
   },
   "scripts": {
-    "benchmark": "node benchmarks",
     "clean": "rimraf *~ #* *classifier.json",
-    "test": "NODE_PATH=. node ./node_modules/jasmine/bin/jasmine.js io_spec/*_spec.js spec/*_spec.js",
+    "build": "tsc",
+    "test": "SET NODE_PATH=. && node ./node_modules/jasmine/bin/jasmine.js io_spec/*_spec.js spec/*_spec.js",
     "coverage": "nyc --reporter=lcov npm test",
-    "test_io": "NODE_PATH=. node ./node_modules/jasmine/bin/jasmine.js --random=false io_spec/*_spec.js",
-    "test_browser": "NODE_PATH=. node ./node_modules/gulp/bin/gulp.js",
+    "test_browser": "SET NODE_PATH=. && node ./node_modules/gulp/bin/gulp.js",
     "lint": "eslint . --ext .ts",
     "lint-ts": "ts-standard **/*.ts"
   },
