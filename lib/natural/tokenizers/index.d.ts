@@ -24,62 +24,9 @@ declare class Tokenizer {
   trim: (array: string[]) => string[]
 }
 
-export class AggressiveTokenizerNl extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerFa extends Tokenizer {
-  clearEmptyString (array: string[]): string[]
-  clearText (text: string): string
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerFr extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerDe extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
 export class AggressiveTokenizerRu extends Tokenizer {
   withoutEmpty (array: string[]): string[]
   clearText (text: string): string
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerEs extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerIt extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerPl extends Tokenizer {
-  withoutEmpty (array: string[]): string[]
-  clearText (text: string): string
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerPt extends Tokenizer {
-  withoutEmpty (array: string[]): string[]
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerNo extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerSv extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerVi extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
-export class AggressiveTokenizerId extends Tokenizer {
   tokenize (text: string): string[]
 }
 
@@ -119,11 +66,6 @@ export class WordPunctTokenizer extends RegexpTokenizer {
 }
 
 export class TreebankWordTokenizer extends Tokenizer {
-  tokenize (text: string): string[]
-}
-
-export class TokenizerJa extends Tokenizer {
-  removePuncTokens (tokens: string[]): string[]
   tokenize (text: string): string[]
 }
 

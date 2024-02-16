@@ -16,9 +16,9 @@
   },
   "include": [
     "lib/natural/**/*",
-    "spec/*"
   ],
   "exclude": [
-    "./node_modules"
+    "./node_modules",
+    "./spec"
   ]
 }
